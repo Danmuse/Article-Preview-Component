@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  box-sizing: inherit;
+  height: 100vh;
+}
+
+:root {
+  --VeryDarkBlue: hsl(217, 19%, 35%);
+  --DarkBlue: hsl(214, 17%, 51%);
+  --GrayishBlue: hsl(212, 23%, 69%);
+  --LightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+/* ¡You can use "@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap')" instead of "@font-face {...}"! */
+
+@font-face {
+  font-family: 'Manrope';
+  font-weight: 500;
+  src: url(../Manrope-VariableFont_wght.ttf);
+}
+
+body {
+  font-family: 'Manrope', Calibri, sans-serif;
+  background-color: var(--LightGrayishBlue);
+  color: var(--VeryDarkBlue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-width: 980px;
+  min-width: 320px;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 50px var(--GrayishBlue);
+  margin: 4rem;
+  display: flex;
+}
+
+.presentationContainer {
+  background-image: url(../images/drawers.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem 0 0 1rem;
+  flex-basis: 40%;
+}
+
+.mainCard {
+  background-color: white;
+  border-radius: 0 1rem 1rem 0;
+  padding: 1rem 3rem 2rem;
+  flex-basis: 60%;
+}
+
+@media screen and (max-width: 720px) {
+  body {
+    display: block;
+    padding: 1rem;
+  }
+  main {
+    display: block;
+    margin: 0 auto;
+  }
+  .presentationContainer {
+    padding: 10rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+  .mainCard {
+    border-radius: 0 0 1rem 1rem;
+    padding-bottom: 1.5rem;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+  }
+}
+
+.mainCard p {
+  color: var(--DarkBlue);
+}
+
+/* Avatar */
+
+.avatarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar img {
+  border-radius: 50%;
+  width: 4rem;
+  height: 100%;
+}
+
+.avatar * {
+  margin: 0.3rem 0;
+}
+
+/* Share */
+
+.shareContainer {
+  position: relative;
+}
+
+.share {
+  padding: 0.6rem;
+  margin-left: 1rem;
+  background-color: var(--LightGrayishBlue);
+  transition: all 0.5s ease-in-out;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.share.active {
+  background-color: var(--DarkBlue);
+}
+
+.share.active img {
+  filter: brightness(0%) invert(100%);
+}
+
+.tooltip {
+  padding: 1rem 2rem;
+  min-width: 14rem;
+  bottom: 4rem;
+  left: -5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--VeryDarkBlue);
+  font-family: 'Manrope', Calibri, sans-serif;
+  color: var(--GrayishBlue);
+  letter-spacing: 0.2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 3px 10px var(--GrayishBlue);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  cursor: initial;
+  position: absolute;
+}
+
+.tooltip.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip::before {
+  content: '';
+  width: 1.2rem;
+  height: 1.2rem;
+  top: 2.6rem;
+  left: calc(50% - 0.6rem);
+  transform: rotate(45deg);
+  background-color: var(--VeryDarkBlue);
+  position: absolute;
+}
+
+.tooltip__link {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 720px) {
+  .mainCard.active {
+    padding-bottom: 0.2rem;
+  }
+  .avatarContainer {
+    margin-top: 1.8rem;
+  }
+  .shareContainer {
+    position: static;
+  }
+  .share {
+    position: relative;
+  }
+  .tooltip {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    gap: 1rem;
+    padding-left: 3rem;
+    justify-content: flex-start;
+    border-radius: 0 0 1rem 1rem;
+  }
+  .tooltip::before {
+    display: none;
+  }
+}

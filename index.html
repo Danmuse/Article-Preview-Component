@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./Card/main.css" />
+    <script type="module" defer src="./Card/index.js"></script>
+    <title>Article Preview Component</title>
+  </head>
+  <body>
+    <main>
+      <section class="presentationContainer"></section>
+      <article class="mainCard">
+        <h2>
+          Shift the overall look and feel by adding these wonderful touches to
+          furniture in your home
+        </h2>
+        <p>
+          Ever been in a room and felt like something was missing? Perhaps it
+          felt slightly bare and uninviting. I’ve got some simple tips to help
+          you make any room feel complete.
+        </p>
+        <section class="avatarContainer">
+          <!-- TIP: Using "display: grid" you can work the elements in two dimensions, 
+          instead of one dimension like "display: flex"
+          That way you don't need "div.avatar" or "div" inside div.avatar -->
+          <div class="avatar">
+            <img src="./images/avatar-michelle.jpg" alt="Avatar" />
+            <div>
+              <h4>Michelle Appleton</h4>
+              <p>28 Jun 2020</p>
+            </div>
+          </div>
+          <div class="shareContainer">
+            <nav class="tooltip">
+              <span>SHARE</span>
+              <a href="#" class="tooltip__link"
+                ><img
+                  src="./images/icon-facebook.svg"
+                  alt="Facebook"
+                  type="image/svg+xml"
+              /></a>
+              <a href="#" class="tooltip__link"
+                ><img
+                  src="./images/icon-twitter.svg"
+                  alt="Twitter"
+                  type="image/svg+xml"
+              /></a>
+              <a href="#" class="tooltip__link"
+                ><img
+                  src="./images/icon-pinterest.svg"
+                  alt="Pinterest"
+                  type="image/svg+xml"
+              /></a>
+            </nav>
+            <button class="share" id="share">
+              <img
+                src="./images/icon-share.svg"
+                alt="Share"
+                type="image/svg+xml"
+              />
+            </button>
+          </div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
